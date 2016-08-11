@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A Wikipedia Viewer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
 
+</head>
 
-  </head>
-  <body>
-    <p><a href="https://en.wikipedia.org/wiki/Special:Random">Click here for a random article</a></p>
-    <div id="search-box">
-      <input id="search-bar" type="text" name="search" placeholder="Search..." required>
-      <button id="search-button" type="submit">Search</button>
-    </div>
-    <div id="search-results">
+<body>
+    <div class="container">
+        <h1>A Wikipedia Viewer
+        <span class="madeby">made by <a href="https://zelite.github.com">Zelite</a></span>
+        </h1>
+
+        <div class="row">
+        <form id="search-box" class="u-full-width">
+            <input id="search-bar" class="five columns" type="text" name="search" placeholder="Search..." required>
+            <button id="search-button" class="button-primary" type="submit">Search</button>
+        </form>
+      </div>
+      <p><a href="https://en.wikipedia.org/wiki/Special:Random">Click here for a random article</a></p>
+        <div id="search-results">
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="js/searchWiki.js"></script>
-  </body>
+</body>
+
 </html>

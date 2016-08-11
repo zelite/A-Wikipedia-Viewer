@@ -12,7 +12,6 @@ function searchWiki(){
       headers: {"Api-User-Agent": "WikipediaViewerZelite/1.0"},
       success: populatePage,
       error: function(data){
-        debugger;
         console.log(data);
       }
     });
@@ -32,11 +31,14 @@ function populatePage(data){
 
     //Populate with new results
   $("#search-results").append(
-      $("<div/>", {class: "result"}).append(title, summary, link)
+      $("<div/>", {class: "result animated bounceInLeft"}).append(title, summary, link)
     );
   }
 }
 
 $(document).ready(
-  $("#search-button").on("click", searchWiki)
+  $("#search-box").submit(function(event){
+    event.preventDefault();
+    searchWiki();
+  })
 );

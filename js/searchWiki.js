@@ -24,7 +24,7 @@ function populatePage(data){
     $("#search-results").empty();
   for(var i = 0; i < data[1].length; i++){
     //Build the components of each new div
-    var title = $("<h1/>", {text: data[1][i]});
+    var title = $("<h2/>", {text: data[1][i]});
     var summary = $("<p/>", {text: data[2][i]});
     var link = $("<a/>", {href: data[3][i],
                             text: "Read article..."});

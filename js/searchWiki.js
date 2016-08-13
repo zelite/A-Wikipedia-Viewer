@@ -19,6 +19,13 @@ function searchWiki(){
 
 }
 
+function clickDivFollowLink(url){
+  return function(){
+    window.location.href = url;
+  };
+}
+
+
 function populatePage(data){
   //first clear any previous results
     $("#search-results").empty();
@@ -26,13 +33,14 @@ function populatePage(data){
     //Build the components of each new div
     var title = $("<h2/>", {text: data[1][i]});
     var summary = $("<p/>", {text: data[2][i]});
-    var link = $("<a/>", {href: data[3][i],
-                            text: "Read article..."});
+    var url = data[3][i];
 
     //Populate with new results
   $("#search-results").append(
-      $("<div/>", {class: "result animated bounceInLeft"}).append(title, summary, link)
-    );
+      $("<div/>", {class: "result animated bounceInLeft"})
+          .append(title, summary)
+        .on("click", clickDivFollowLink(url))
+      );
   }
 }
 

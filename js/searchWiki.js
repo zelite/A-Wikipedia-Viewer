@@ -1,5 +1,7 @@
 function searchWiki() {
+
     var searchTerms = $("#search-bar").val();
+    $("#search-bar").blur(); //remove focus from search text bar - makes android close keyboard
     if (searchTerms) {
         $.ajax({
             url: "https://en.wikipedia.org/w/api.php?origin=*",
